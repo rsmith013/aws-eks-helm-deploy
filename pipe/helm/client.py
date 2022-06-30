@@ -32,6 +32,7 @@ class HelmClient:
   set = []
   _values = []
   wait = False
+  wait_timeout = None
   install_subcharts = False
 
   def validate_chart(self, chart):
@@ -120,7 +121,13 @@ class HelmClient:
       )
     
     if self.wait:
-        command.append('--wait')    
+      command.append('--wait')    
+
+    if self.wait_timeout:
+      command += (
+        '--timeout',
+        self.wait_timeout
+      )
       
     return self._run(command)
 

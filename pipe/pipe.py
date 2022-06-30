@@ -49,6 +49,7 @@ class HelmPipe(Pipe):
     set = self.get_variable('SET')
     values = self.get_variable('VALUES')
     wait = self.get_variable('WAIT')
+    wait_timeout = self.get_variable('WAIT_TIMEOUT')
     uninstall = self.get_variable('UNINSTALL')
     install_subcharts = self.get_variable('INSTALL_SUBCHARTS')
 
@@ -98,6 +99,7 @@ class HelmPipe(Pipe):
       helm_client.set = set
       helm_client.values = values
       helm_client.wait = wait
+      helm_client.wait_timeout = wait_timeout
       helm_client.install_subcharts = install_subcharts
 
       if not uninstall:

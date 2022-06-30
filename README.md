@@ -17,25 +17,26 @@ Add the following snippet to the script section of your `bitbucket-pipelines.yml
 
 ## Variables
 
-| Variable                  | Usage                                                                  |
-| ------------------------- | ---------------------------------------------------------------------- |
-| AWS_REGION                | AWS Region. Default: `eu-central-1`. |
-| AWS_ACCESS_KEY_ID (*)     | AWS Access Key ID |
-| AWS_SECRET_ACCESS_KEY (*) | AWS Secret Access Key |
-| ROLE_ARN                  | AWS IAM Role to assume when access EKS |
-| SESSION_NAME              | AWS STS Session name |
-| CLUSTER_NAME (*)          | Name of the AWS EKS cluster |
-| CHART (*)                 | Path or name of the chart which should be deployed |
-| RELEASE_NAME              | Name of the helm release |
-| NAMESPACE                 | Target Kubernetes namespace of the deployment. Default: `kube-public`. |
-| CREATE_NAMESPACE          | Boolean. Will instruct helm to create a namespace if missing. Default: `false`. |
-| SET                       | List of values which should be used as --set argument for Helm |
-| VALUES                    | Local values YAML files which should be passed to Helm (--values) |
-| DEBUG                     | Debug. Default: `false`. |
-| WAIT                      | Wait until application is ready. Default: `false`. |
-| DEBUG                     | Debug. Default: `false`. |
-| UNINSTALL                 | Uninstall the release from the given namespace. Default: `false` |
-| INSTALL_SUBCHARTS         | Run `helm dependency update` to pull in the latest subcharts based on `Charts.yaml`. Default: `false` |
+| Variable                  | Usage                                                                  | Example |
+| ------------------------- | ---------------------------------------------------------------------- | ------- |
+| AWS_REGION                | AWS Region. Default: `eu-central-1`. ||
+| AWS_ACCESS_KEY_ID (*)     | AWS Access Key ID ||
+| AWS_SECRET_ACCESS_KEY (*) | AWS Secret Access Key ||
+| ROLE_ARN                  | AWS IAM Role to assume when access EKS ||
+| SESSION_NAME              | AWS STS Session name ||
+| CLUSTER_NAME (*)          | Name of the AWS EKS cluster ||
+| CHART (*)                 | Path or name of the chart which should be deployed ||
+| RELEASE_NAME              | Name of the helm release ||
+| NAMESPACE                 | Target Kubernetes namespace of the deployment. Default: `kube-public`. ||
+| CREATE_NAMESPACE          | Boolean. Will instruct helm to create a namespace if missing. Default: `false`. ||
+| SET                       | List of values which should be used as --set argument for Helm ||
+| VALUES                    | Local values YAML files which should be passed to Helm (--values) ||
+| DEBUG                     | Debug. Default: `false`. ||
+| WAIT                      | Wait until application is ready. Default: `false`. ||
+| WAIT_TIMEOUT              | Time to wait for resources. Default: `300s`. | `1h`  or `30m`|
+| DEBUG                     | Debug. Default: `false`. ||
+| UNINSTALL                 | Uninstall the release from the given namespace. Default: `false` ||
+| INSTALL_SUBCHARTS         | Run `helm dependency update` to pull in the latest subcharts based on `Charts.yaml`. Default: `false` ||
 
 _(*) = required variable._
 
