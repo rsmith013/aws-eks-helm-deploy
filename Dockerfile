@@ -1,7 +1,7 @@
 FROM alpine/helm:3.8.2 as helm
 RUN chown root:root /usr/bin/helm
 
-FROM python:3.7-alpine3.11
+FROM python:3.7-alpine3.16
 
 RUN mkdir -p /opt/pipe
 

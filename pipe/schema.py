@@ -38,6 +38,7 @@ def get_schema():
     'SET': {'type': 'list', 'required': False, 'default': []},
     'VALUES': {'type': 'list', 'required': False, 'default': []},
     'WAIT': {'type': 'boolean', 'required': False, 'default': False},
+    'WAIT_TIMEOUT': {'type': 'string', 'required': False, 'default': "300s"},
     'DEBUG': {'type': 'boolean', 'required': False, 'default': False},
     'UNINSTALL': {'type': 'boolean', 'required': False, 'default': False},
     'INSTALL_SUBCHARTS': {'type': 'boolean', 'required': False, 'default': False}
